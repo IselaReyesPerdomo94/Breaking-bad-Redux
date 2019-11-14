@@ -1,25 +1,27 @@
 import React from 'react';
-import {GiPerspectiveDiceSixFacesRandom, FaRegStar, FaStar} from 'react-icons/fa';
+import {GiPerspectiveDiceSixFacesRandom } from 'react-icons/gi';
+import {FaRegStar, FaStar} from 'react-icons/fa';
 import './style.css';
 
-const Card = () => {
+const Card = (props) => {
+    const {img, name, occupation, nickname, status, portrayed, quote} = props;
     return(
-        <article>
+        <article className="card">
             <figure>
-                <img/>
+                <img src={img} alt={img}/>
             </figure>
             <header>
-                <h3></h3>
+                <h3>{name}</h3>
             </header>
-            <p>Occupation:</p>
-            <p>Nickname:</p>
-            <p>Status:</p>
-            <p>Portrayed by:</p>
-            <blockquote cite="">
-                <p></p>
-                <GiPerspectiveDiceSixFacesRandom/>
+            <p>Occupation: <span>{occupation}</span></p>
+            <p>Nickname: <span>{nickname}</span></p>
+            <p>Status: <span>{status}</span></p>
+            <p>Portrayed by: <span>{portrayed}</span></p>
+            <blockquote cite="" className="quote">
+                <p>{quote}</p>
+                <GiPerspectiveDiceSixFacesRandom className="random"/>
             </blockquote>
-            <span></span>
+            <span className="star"></span>
         </article>
     )
 }
