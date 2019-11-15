@@ -1,6 +1,6 @@
 import React from 'react';
 import {GiPerspectiveDiceSixFacesRandom } from 'react-icons/gi';
-import {FaRegStar, FaStar} from 'react-icons/fa';
+import {FaRegStar, FaStar, FaHeart, FaRegHeart} from 'react-icons/fa';
 import './style.css';
 
 const Card = (props) => {
@@ -21,7 +21,8 @@ const Card = (props) => {
                 <p>{quote}</p>
                 <GiPerspectiveDiceSixFacesRandom className="random"/>
             </blockquote>
-            <span className="star"></span>
+            <span className="star">Character</span>
+            <span className="heart">Quote</span>
         </article>
     )
 }
