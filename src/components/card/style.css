@@ -1,15 +1,15 @@
 .card {
     width: 95%;
-    height: fit-content;
     display: flex;
-    margin: 1rem auto;
     color: white;
     font-size: 1rem;
+    margin: 1rem auto;
+    position: relative;
+    height: fit-content;
     border-radius: 10px;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    position: relative;
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
@@ -29,11 +29,11 @@
 
 .card figure {
     margin: 0;
-    height: 350px;
     width: 100%;
+    height: 350px;
     display: flex;
-    justify-content: center;
     overflow: hidden;
+    justify-content: center;
 }
 
 .card figure img {
@@ -45,13 +45,12 @@
 }
 
 .quote {
-    width: 80%;
+    width: 90%;
     display: flex;
     margin: 0 auto;
     padding: 0.5rem;
     font-style: italic;
     border-radius: 10px;
-    background-color: #EFEBEB;
     justify-content: space-between;
 }
 
@@ -65,10 +64,10 @@
 }
 
 .arrow {
-    width: 4.5rem;
-    display: flex;
-    height: 4.5rem;
     margin: 0;
+    display: flex;
+    width: 4.5rem;
+    height: 4.5rem;
     font-size: 3rem;
     color: yellow;
     align-items: center;
@@ -87,9 +86,8 @@
     /* IE6-9 fallback on horizontal gradient */
 }
 
-.up {
-    transform: rotate(90deg);
-    transition: transform 0.5s;
+.arrow:hover {
+    transform: scale(1.2);
 }
 
 .down {
@@ -98,13 +96,17 @@
 }
 
 .character-info {
+    bottom: 0;
     width: 100%;
-    background-color: #232323;
     height: 100px;
-    transition: height 0.5s;
     padding: 1rem;
     position: absolute;
-    bottom: 0;
+    transition: height 0.5s;
+    background-color: #232323;
+}
+
+.character-details {
+    height: fit-content;
 }
 
 .show-more {
@@ -113,4 +115,19 @@
 
 .hide {
     display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .card {
+        width: 45%;
+    }
+    .arrow {
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width: 1020px) {
+    .card {
+        width: 30%;
+    }
 }

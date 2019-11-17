@@ -1,9 +1,15 @@
 import React from 'react';
-import {Home} from './views';
+import {Home, Quotes} from './views';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 
 const App =() =>(
-  <Home />
+  <Router>
+    <Switch>
+      <Route exact path="/"><Home/></Route>
+      <Route exact path="/quotes"><Quotes/></Route>
+    </Switch>
+  </Router>
 )
 
 export default App;

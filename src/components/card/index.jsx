@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {GiPerspectiveDiceSixFacesRandom, GiChemicalArrow } from 'react-icons/gi';
-import {FaRegStar, FaStar, FaHeart, FaRegHeart} from 'react-icons/fa';
 import './style.css';
 
 const Card = ({img, name, occupation, nickname, status, portrayed, quote}) => {
@@ -9,8 +8,8 @@ const Card = ({img, name, occupation, nickname, status, portrayed, quote}) => {
     const handleClickShowInfo = () => setShow(!show)
 
     const cardClass = `character-info ${show ? "show-more" : "show-less"}`;
-    const arrow = `arrow ${show ? "up" : "down"}`;
-    const characterInfo = `${show ? "" : "hide"}`;
+    const arrow = `arrow ${show ? "s" : "down"}`;
+    const characterInfo = `character-details ${show ? "" : "hide"}`;
     return(
         <article className="card">
             <figure>
@@ -30,8 +29,6 @@ const Card = ({img, name, occupation, nickname, status, portrayed, quote}) => {
                         <p>{quote}</p>
                         <GiPerspectiveDiceSixFacesRandom className="random"/>
                     </blockquote>
-                    <span className="star">Character</span>
-                    <span className="heart">Quote</span>
                 </div>
             </div>
         </article>

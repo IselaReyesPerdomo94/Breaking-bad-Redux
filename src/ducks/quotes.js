@@ -1,27 +1,33 @@
 //Actions
 export const START_FETCH_QUOTES = 'START_FETCH_QUOTES';
-export const FETCH_QUOTES_PENDING = 'FETCH_QUOTES_PENDING';
 export const FETCH_QUOTES_SUCCESS = 'FETCH_QUOTES_SUCCESS';
 export const FETCH_QUOTES_ERROR = 'FETCH_QUOTES_ERROR';
 
+//State
+const quotesState = {
+    loading: false,
+    quotes: [],
+    error: null
+}
+
 //Reducer
-const quotes = (state = {}, action) => {
+const quotes = (state = quotesState, action) => {
     switch (action.type) {
-        case FETCH_QUOTES_PENDING:
+        case START_FETCH_QUOTES:
             return {
                 ...state,
-                pending: true
+                loading: true
             }
         case FETCH_QUOTES_SUCCESS:
             return {
                 ...state,
-                pending: false,
+                loading: false,
                 quotes: action.quotes
             }
         case FETCH_QUOTES_ERROR:
             return {
                 ...state,
-                pending: false,
+                loading: false,
                 error: action.error
             }
         default:
@@ -33,12 +39,6 @@ const quotes = (state = {}, action) => {
 export const startFetchQuotes = () => {
     return {
         type: START_FETCH_QUOTES
-    }
-}
-
-export const fetchQuotesPending = () => {
-    return {
-        type: FETCH_QUOTES_PENDING
     }
 }
 

@@ -2,7 +2,7 @@ import { createEpicMiddleware, combineEpics } from 'redux-observable';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 
 import { characters, quotes } from '../ducks';
-import { characterEpic } from '../epic';
+import { characterEpic, quotesEpic } from '../epic';
 
 //combining reducers
 export const rootReducer = combineReducers({
@@ -13,6 +13,7 @@ export const rootReducer = combineReducers({
 //combining epics
 export const rootEpic = combineEpics(
     characterEpic,
+    quotesEpic
 )
 
 const epicMiddleware = createEpicMiddleware();
@@ -23,6 +24,6 @@ const store = createStore(
     applyMiddleware(epicMiddleware)
 )
 
-epicMiddleware.run(characterEpic)
+epicMiddleware.run(rootEpic)
 
 export default store;

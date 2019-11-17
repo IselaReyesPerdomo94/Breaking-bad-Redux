@@ -1,0 +1,18 @@
+.quotes-section {
+    color: white;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.quotes-main {
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .quotes-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}
