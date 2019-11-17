@@ -1,0 +1,42 @@
+.search-icon {
+    color: white;
+    font-size: 2rem;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    /*position: fixed;*/
+}
+
+.search-container label {
+    padding: 0.6rem;
+    width: 15%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border-radius: 0px 10px 10px 0px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#95d81a+0,14463b+0,036821+100 */
+    background: #95d81a;
+    /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #95d81a 0%, #14463b 0%, #036821 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #95d81a 0%, #14463b 0%, #036821 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #95d81a 0%, #14463b 0%, #036821 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#95d81a', endColorstr='#036821', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    cursor: pointer;
+}
+
+.search-input {
+    background-color: white;
+    border: none;
+    border-radius: 10px 0px 0px 10px;
+    width: 80%;
+    height: 4rem;
+    font-size: 1.5rem;
+    color: #282822;
+}

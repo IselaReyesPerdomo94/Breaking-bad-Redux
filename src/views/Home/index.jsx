@@ -1,15 +1,21 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {connect} from 'react-redux';
 
 import {startFetchCharacters} from '../../ducks/characters';
 
-import {Card, Nav} from '../../components';
+import {Nav, Search, CharacterList} from '../../components';
 
 import Loader from 'react-loader-spinner';
 
 import './style.css';
 
 const Home = ({characters, startFetchCharacters, isLoading}) => {
+    const [searchValue, setSearchValue] = useState('');
+
+    const handleSearchChange= (e) => {
+      setSearchValue(e.target.value)
+    }
+
     useEffect( ()=>{
       startFetchCharacters()
     }, [])
@@ -17,6 +23,10 @@ const Home = ({characters, startFetchCharacters, isLoading}) => {
     <div className="App">
       <Nav/>
       <main>
+        <Search
+          value={searchValue}
+          onChange={handleSearchChange}
+        />
         <section className="characters-section">
           { isLoading && <div className="loader">
             <Loader 
@@ -27,20 +37,10 @@ const Home = ({characters, startFetchCharacters, isLoading}) => {
             className="loader"/>
             </div>
           }
-
-          {
-          characters && characters.map(character => {          
-            return <Card 
-                      img={character.img}
-                      name={character.name}
-                      occupation={character.occupation.join(', ')}
-                      status={character.status}
-                      portrayed={character.portrayed}
-                      nickname={character.nickname}
-                      key={character.char_id}
-                    />
-          })
-        }
+            <CharacterList
+              characters={characters}
+              searchValue={searchValue}
+            />
         </section>
       </main>
     </div>

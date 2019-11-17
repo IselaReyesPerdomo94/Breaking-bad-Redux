@@ -40,18 +40,14 @@ export const startFetchCharacters = () => ({
     type: START_FETCH_CHARACTER
 })
 
-export const fetchCharacterSuccess = (characters) => {
-    return {
-        type: FETCH_CHARACTER_SUCCESS,
-        characters: characters
-    }
-}
+export const fetchCharacterSuccess = (characters) => ({
+    type: FETCH_CHARACTER_SUCCESS,
+    characters: characters
+})
 
-export const fetchCharacterError = (error) => {
-    return {
-        type: FETCH_CHARACTER_ERROR,
-        error: error
-    }
-}
+export const fetchCharacterError = (error) => ({
+    type: FETCH_CHARACTER_ERROR,
+    error: error
+})
 
 export default characters;

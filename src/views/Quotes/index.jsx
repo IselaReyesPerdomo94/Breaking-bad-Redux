@@ -1,13 +1,19 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {connect} from 'react-redux';
 
 import {startFetchQuotes} from '../../ducks/quotes';
-import {Nav, Quote} from '../../components';
+import {Nav, Search, QuoteList} from '../../components';
 
 import Loader from 'react-loader-spinner';
 import './style.css';
 
 const Quotes = ({quotes, startFetchQuotes, isLoading}) => {
+    const [searchValue, setSearchValue] = useState('')
+
+    const handleSearchChange = (e) => {
+        setSearchValue(e.target.value)
+    }
+
     useEffect(()=> {
         startFetchQuotes()
     }, [])
@@ -16,6 +22,10 @@ const Quotes = ({quotes, startFetchQuotes, isLoading}) => {
             <header>
                 <Nav/>
             </header>
+            <Search 
+                onChange={handleSearchChange}
+                value={searchValue}
+                />
             <section className="quotes-section">
             { isLoading && <div className="loader">
                 <Loader 
@@ -26,15 +36,10 @@ const Quotes = ({quotes, startFetchQuotes, isLoading}) => {
                     className="loader"/>
                 </div>
             }
-            {
-                quotes && quotes.map(quote => <Quote
-                    author={quote.author}
-                    quote={quote.quote}
-                    key={quote.quote_id}
-                />)
-            }
-
-
+            <QuoteList
+                searchValue={searchValue}
+                quotes={quotes}
+            />
             </section>
         </main>
     )

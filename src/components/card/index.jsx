@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {GiPerspectiveDiceSixFacesRandom, GiChemicalArrow } from 'react-icons/gi';
+import { GiChemicalArrow } from 'react-icons/gi';
 import './style.css';
 
-const Card = ({img, name, occupation, nickname, status, portrayed, quote}) => {
+const Card = ({img, name, occupation, nickname, status, portrayed, seasons}) => {
     const [show, setShow] = useState(false)
    
     const handleClickShowInfo = () => setShow(!show)
@@ -25,10 +25,7 @@ const Card = ({img, name, occupation, nickname, status, portrayed, quote}) => {
                     <p>Nickname: <span>{nickname}</span></p>
                     <p>Status: <span>{status}</span></p>
                     <p>Portrayed by: <span>{portrayed}</span></p>
-                    <blockquote cite="" className="quote">
-                        <p>{quote}</p>
-                        <GiPerspectiveDiceSixFacesRandom className="random"/>
-                    </blockquote>
+                    <p>Seasons: <span>{seasons}</span></p>
                 </div>
             </div>
         </article>
