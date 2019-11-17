@@ -1,20 +1,19 @@
 .card {
-    width: 95%;
-    height: 80vh;
+    width: 90%;
+    height: fit-content;
     display: flex;
-    margin: 0 auto;
+    margin: 0.5rem auto;
     padding: 0.5rem;
     font-size: 1rem;
     border-radius: 10px;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    background-color: #FCFCFC;
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .card header {
-    margin: 0.1rem;
+    margin: 0.5rem;
     font-size: 2rem;
     font-family: 'Special Elite', cursive;
 }
@@ -26,14 +25,15 @@
 
 .card figure {
     margin: 0;
-    width: 90%;
+    height: 350px;
+    width: 100%;
     display: flex;
     justify-content: center;
+    overflow: hidden;
 }
 
 .card figure img {
-    width: 100%;
-    border-radius: 10px;
+    height: 100%;
 }
 
 .card span {
@@ -58,4 +58,13 @@
 
 .star {
     color: #DBA511;
+}
+
+.arrow {
+    font-size: 3rem;
+}
+
+.character-info {
+    width: 100%;
+    background-color: whitesmoke;
 }

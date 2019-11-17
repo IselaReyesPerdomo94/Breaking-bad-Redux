@@ -1,65 +1,10 @@
 /*Tags*/
 
-body {
-    background-color: #124026;
-}
-
-.header h1 {
-    font-family: 'Special Elite', cursive;
-    color: white;
-    font-size: 1.5rem;
-}
-
-
-/*ID*/
-
-#root {
-    display: flex;
-    justify-content: center;
-}
-
-
-/*Class*/
-
-.App {
-    width: 100%;
-}
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    height: fit-content;
-    align-items: center;
-}
-
-.nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.nav a {
-    background-color: #282822;
-    color: white;
-    padding: 0.5rem;
-    border-radius: 10px;
-    margin-top: 0.5rem;
-}
-
-.breaking {
+* {
+    box-sizing: border-box;
     margin: 0;
 }
 
-.bad {
-    margin-left: 1.5rem;
-    margin-top: 0;
-    display: block;
-}
-
-.heart-link {
-    color: #EC1261;
-}
-
-.star-link {
-    color: #DBA511;
+body {
+    background-color: #0e0d0d;
 }
