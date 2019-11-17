@@ -24,7 +24,7 @@
     justify-content: space-between;
     height: fit-content;
     align-items: center;
-    background-color: rgb(10, 39, 34);
+    background-color: #232323;
     padding: 0.5rem;
 }
 
@@ -36,7 +36,8 @@
 }
 
 .nav a {
-    width: 45%;
+    width: 49%;
+    text-decoration: none;
     padding: 1rem;
     color: white;
     font-size: 1.5rem;

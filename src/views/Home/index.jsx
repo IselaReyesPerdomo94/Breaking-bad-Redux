@@ -33,14 +33,17 @@ const Home = ({characters,startFetchCharacters}) => {
         </nav>
         <section>
         {
-        characters && characters.map(character => <Card 
-          img={character.img}
-          name={character.name}
-          occupation={character.occupation.join(', ')}
-          status={character.status}
-          portrayed={character.portrayed}
-          nickname={character.nickname}
-        />)
+        characters && characters.map(character => {          
+          return <Card 
+                    img={character.img}
+                    name={character.name}
+                    occupation={character.occupation.join(', ')}
+                    status={character.status}
+                    portrayed={character.portrayed}
+                    nickname={character.nickname}
+                    key={character.char_id}
+                  />
+        })
       }
         </section>
       </main>

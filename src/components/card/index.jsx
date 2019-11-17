@@ -10,6 +10,7 @@ const Card = ({img, name, occupation, nickname, status, portrayed, quote}) => {
 
     const cardClass = `character-info ${show ? "show-more" : "show-less"}`;
     const arrow = `arrow ${show ? "up" : "down"}`;
+    const characterInfo = `${show ? "" : "hide"}`;
     return(
         <article className="card">
             <figure>
@@ -18,18 +19,20 @@ const Card = ({img, name, occupation, nickname, status, portrayed, quote}) => {
             <div className={cardClass}>
                 <header>
                     <h3>{name}</h3>
+                    <span className={arrow} onClick={handleClickShowInfo}><GiChemicalArrow/></span>
                 </header>
-                <span className={arrow}><GiChemicalArrow/></span>
-                <p>Occupations: <span>{occupation}</span></p>
-                <p>Nickname: <span>{nickname}</span></p>
-                <p>Status: <span>{status}</span></p>
-                <p>Portrayed by: <span>{portrayed}</span></p>
-                <blockquote cite="" className="quote">
-                    <p>{quote}</p>
-                    <GiPerspectiveDiceSixFacesRandom className="random"/>
-                </blockquote>
-                <span className="star">Character</span>
-                <span className="heart">Quote</span>
+                <div className={characterInfo}>
+                    <p>Occupations: <span>{occupation}</span></p>
+                    <p>Nickname: <span>{nickname}</span></p>
+                    <p>Status: <span>{status}</span></p>
+                    <p>Portrayed by: <span>{portrayed}</span></p>
+                    <blockquote cite="" className="quote">
+                        <p>{quote}</p>
+                        <GiPerspectiveDiceSixFacesRandom className="random"/>
+                    </blockquote>
+                    <span className="star">Character</span>
+                    <span className="heart">Quote</span>
+                </div>
             </div>
         </article>
     )
