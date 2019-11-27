@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 
 const App =() =>(
-  <Router>
+  <Router basename={window.location.pathname || ''}>
     <Switch>
       <Route exact path="/"><Home/></Route>
       <Route exact path="/quotes"><Quotes/></Route>
