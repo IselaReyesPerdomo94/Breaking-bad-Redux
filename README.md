@@ -2,7 +2,6 @@
 
 Webpage where you can find all data from your favorite characters or learn more about their thoughts with their special quotes.
 
-
 The configuration of the was made with create-react-app and you can have all the dependecies just running npm install.
 
 If you want to try it for yourself, you can get a copy of my repository by clicking ¨Fork¨ or well can downloaded or cloned with:
@@ -32,4 +31,3 @@ Fork and clone this repository,  type in your terminal `npm install` and you are
 - [React-router-dom](https://reacttraining.com/react-router/web/guides/quick-start)
 
 - [React-loader-spinner](https://www.npmjs.com/package/react-loader-spinner)
-
