@@ -1,64 +1,63 @@
-import React, {useEffect, useState} from 'react';
-import {connect} from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
-import {startFetchCharacters} from '../../ducks/characters';
+import { startFetchCharacters, getCharacters, getLoadingStatus } from '../../ducks/characters';
 
-import {Nav, Search, CharacterList} from '../../components';
+import { Nav, Search, CharacterList } from '../../components';
 
 import Loader from 'react-loader-spinner';
 
 import './style.css';
 
-const Home = ({characters, startFetchCharacters, isLoading}) => {
-    const [searchValue, setSearchValue] = useState('');
+/**
+ * Home is the principal page.
+ * @returns {*} React component.
+ */
+const Home = () => {
+  const dispatch =  useDispatch();
+  const characters =  useSelector(getCharacters);
+  const isLoading = useSelector(getLoadingStatus);
+  const [searchValue, setSearchValue] = useState('');
 
-    const handleSearchChange= (e) => {
-      setSearchValue(e.target.value)
-    }
+  const handleSearchChange= (e) => {
+    setSearchValue(e.target.value)
+  }
 
-    useEffect( ()=>{
-      startFetchCharacters()
-    }, [])
-    return(
+  useEffect( ()=>{
+    dispatch(startFetchCharacters());
+  }, [dispatch]);
+
+  return(
     <div className="App">
-      <Nav/>
+      <Nav />
       <main>
         <Search
           value={searchValue}
           onChange={handleSearchChange}
         />
         <section className="characters-section">
-          { isLoading && <div className="loader">
-            <Loader 
-            type="Puff" 
-            color="yellow" 
-            height={80} 
-            width={80} 
-            className="loader"/>
+          { isLoading && 
+            <div className="loader">
+              <Loader 
+                type="Puff" 
+                color="yellow" 
+                height={80} 
+                width={80} 
+                className="loader" 
+              />
             </div>
           }
+          {
+            characters.length > 0 && 
             <CharacterList
               characters={characters}
               searchValue={searchValue}
             />
+          }
         </section>
       </main>
     </div>
     )
 }
 
-const mapStateToProps = ({characters}) => {
-  return {
-    characters: characters.characters,
-    isLoading: characters.loading
-  }
-}
-
-const mapDispatchToProps = {
-  startFetchCharacters
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Home);
+export default Home;

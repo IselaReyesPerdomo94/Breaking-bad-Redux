@@ -40,20 +40,23 @@ export const startFetchQuotes = () => {
     return {
         type: START_FETCH_QUOTES
     }
-}
+};
 
 export const fetchQuotesSuccess = (quotes) => {
     return {
         type: FETCH_QUOTES_SUCCESS,
         quotes: quotes
     }
-}
+};
 
 export const fetchQuotesError = (error) => {
     return {
         type: FETCH_QUOTES_ERROR,
         error: error
     }
-}
+};
+
+export const getQuotes = state => state.quotes.quotes;
+export const getQuotesLoadingStatus = state => state.quotes.loading;
 
 export default quotes;

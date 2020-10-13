@@ -7,12 +7,14 @@
     display: flex;
     justify-content: center;
     padding: 1rem;
-    /*position: fixed;*/
+    position: sticky;
+    margin-top: 1rem;
 }
 
 .search-container label {
     padding: 0.6rem;
     width: 15%;
+    max-width: 60px;
     display: flex;
     align-items: center;
     text-align: center;
@@ -29,6 +31,10 @@
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#95d81a', endColorstr='#036821', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
     cursor: pointer;
+}
+
+.search-container label svg:hover {
+    transform: scale(1.5);
 }
 
 .search-input {

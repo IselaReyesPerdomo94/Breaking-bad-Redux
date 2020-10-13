@@ -40,14 +40,18 @@ export const startFetchCharacters = () => ({
     type: START_FETCH_CHARACTER
 })
 
-export const fetchCharacterSuccess = (characters) => ({
+export const fetchCharacterSuccess = characters => ({
     type: FETCH_CHARACTER_SUCCESS,
     characters: characters
 })
 
-export const fetchCharacterError = (error) => ({
+export const fetchCharacterError = error => ({
     type: FETCH_CHARACTER_ERROR,
     error: error
 })
+
+//Selectors
+export const getCharacters = state => state.characters.characters;
+export const getLoadingStatus = state => state.characters.loading;
 
 export default characters;
