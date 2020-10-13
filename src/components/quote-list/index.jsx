@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-import { Quote } from "../index";
+import { Quote, EmptyMessage } from "../index";
 
 import "./style.css";
 
@@ -16,11 +16,13 @@ const QuoteList = ({ searchValue, quotes }) => {
   const showFullList = areQuotesToRender && !searchValue;
 
   const searchAuthorQuote = (searchValue) => {
-    return quotes
-      .filter((quote) =>
-        quote.author.toUpperCase().includes(searchValue.toUpperCase())
-      )
-      .map((quote) => (
+    const result = quotes.filter((quote) =>
+      quote.author.toUpperCase().includes(searchValue.toUpperCase())
+    );
+    if(result.length === 0) {
+      return <EmptyMessage message='We could not find quotes from that character'/>
+    }
+    return result.map((quote) => (
         <Quote author={quote.author} quote={quote.quote} key={quote.quote_id} />
       ));
   };

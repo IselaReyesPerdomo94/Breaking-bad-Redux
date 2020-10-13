@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "../";
+import { Card, EmptyMessage } from "../";
 
 export const seasonsAppearenceString = (seasons) =>
   seasons.map((season) => season.toString());
@@ -20,7 +20,13 @@ export const findCharacter = ({ searchValue, characters }) => {
 };
 
 export const filteredCharacterList = ({ searchValue, characters }) => {
-  return findCharacter({ characters, searchValue }).map((character) => (
+	const result = findCharacter({ characters, searchValue });
+
+  if (result.length === 0) {
+		console.log('entra aqui')
+    return <EmptyMessage message='We could not find that character' />
+  }
+  return result.map((character) => (
     <Card
       img={character.img}
       name={character.name}

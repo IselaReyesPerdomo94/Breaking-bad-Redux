@@ -3,6 +3,7 @@ import Card from './card';
 import Quote from './quote';
 import Search from './search';
 import QuoteList from './quote-list';
+import EmptyMessage from './emptyMessage';
 import CharacterList from './character-list';
 
-export { Card, Nav, Quote, Search, QuoteList, CharacterList }
+export { Card, Nav, Quote, Search, QuoteList, CharacterList, EmptyMessage }
